@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather & Movie Search App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">🌐 API Mini Apps</div>
+    <div class="nav-links">
+      <button class="nav-btn active" id="btn-weather" onclick="showApp('weather')">🌤 Weather</button>
+      <button class="nav-btn" id="btn-movie" onclick="showApp('movie')">🎬 Movies</button>
+    </div>
+  </nav>
+
+  <!-- ───────── WEATHER APP ───────── -->
+  <section class="app-section" id="weather-app">
+    <div class="container">
+      <h1 class="app-title">🌤 Weather App</h1>
+      <p class="app-subtitle">Get real-time weather for any city worldwide</p>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="city-input"
+          class="search-input"
+          placeholder="Enter city name…"
+          autocomplete="off"
+        />
+        <button class="search-btn" id="weather-search-btn">Search</button>
+      </div>
+
+      <div id="weather-error" class="error-msg hidden"></div>
+      <div id="weather-loader" class="loader hidden"></div>
+      <div id="weather-card" class="weather-card hidden"></div>
+    </div>
+  </section>
+
+  <!-- ───────── MOVIE APP ───────── -->
+  <section class="app-section hidden" id="movie-app">
+    <div class="container">
+      <h1 class="app-title">🎬 Movie Search App</h1>
+      <p class="app-subtitle">Discover movies, ratings & release info</p>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="movie-input"
+          class="search-input"
+          placeholder="Search for a movie…"
+          autocomplete="off"
+        />
+        <button class="search-btn" id="movie-search-btn">Search</button>
+      </div>
+
+      <div id="movie-error" class="error-msg hidden"></div>
+      <div id="movie-loader" class="loader hidden"></div>
+      <div id="movie-results" class="movie-grid"></div>
+    </div>
+  </section>
+
+  <script src="js/weather.js" type="module"></script>
+  <script src="js/movie.js" type="module"></script>
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
